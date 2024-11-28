@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="PayoutSchedule.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <title>Payout Schedule</title>
+</head>
+
+<body>
+ 
+
+  <div class="maincont">
+    <div class="nav">
+      <div class="imagecont">
+        <img src="/Images/DSWD-Logo-Icon.png" alt="" />
+      </div>
+
+      <div class="links">
+        <ul>
+          <li>
+            <a href="../dashboards/Dashboard.html">
+              <div>
+                <img src="../Admin imgs/icons8-dashboard-48.png" alt="" />
+                <label for="">Dashboard</label>
+              </div>
+            </a>
+          </li>
+          <li class="highlight">
+            <a href="../Activity log/ActivityLog.html">
+              <div>
+                <img src="../Admin imgs/icons8-verified-account-48.png" alt="" />
+                <label for="">Activity Log</label>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="../Application report/Applicationreport.html">
+              <div>
+                <img src="../Admin imgs/icons8-system-task-48.png" alt="" />
+                <label for="">Application Report</label>
+              </div>
+            </a>
+          </li>
+          <li class="userManagement">
+            <a href="../UserManagement/Usernanagement.html">
+              <div>
+                <img src="../Admin imgs/icons8-user-secured-48.png" alt="" />
+                <label for="">User Management</label>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/Admin/Payout Schedule/PayoutSchedule.html">
+              <div>
+                <img src="../Admin imgs/icons8-system-task-48.png" alt="" />
+                <label for="">Payout Schedule</label>
+              </div>
+            </a>
+          </li>
+          <li class="settings-link">
+            <div class="dd">
+              <img src="../Admin imgs/icons8-settings-48.png" alt="" /><label for=""> Settings</label>
+
+              <div class="dropdown-content">
+                <div>
+                  <a href="../Setting/PersonalDetails.html">Personal Details</a><br />
+                </div>
+                <div>
+                  <a href="#option2">About Us</a><br />
+                </div>
+                <div>
+                  <a href="#option3">Security Policy</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="logout">
+        <div>
+          <img src="../Admin imgs/icons8-logout-32.png" alt="" /><label for="">
+            Logout</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="parent-cardcont">
+      <div class="title">
+        <div class="childtitle">
+          <p>Payout Schedule</p>
+        </div>
+        <div class="button">
+          <div>
+            <p id="roleDisplay">Role</p> <!-- Dynamic role display -->
+          </div>
+          <div class="buttonimg">
+            <img src="../Admin imgs/icons8-admin-26.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <!-- Search icon -->
+        <img src="../Admin imgs/icons8-search-50.png" alt="Search Icon" class="search-icon" />
+
+        <!-- Search input field -->
+        <input type="text" class="search-input" placeholder="Search..." />
+      </div>
+      <div class="maincardcont">
+        <div class="card-container">
+          <div class="overflowcont">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="upper-section">
+      <p>©2024 All Rights Reserved </p>
+    </div>
+
+    <div class="Lower-section">
+      <div class="first-section">
+        <p>DSWD - FAMS</p>
+      </div>
+      <div class="second-section">
+        <a href="">
+          <p>Home</p>
+        </a>
+        <a href="">
+          <p>About</p>
+        </a>
+        <a href="">
+          <p>Contact</p>
+        </a>
+      </div>
+      <div class="third-section"></div>
+    </div>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  
+
+</body>
+
+</html>

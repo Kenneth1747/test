@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="Acceptedsampls.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <title>Accepted Applicants</title>
+</head>
+
+<body>
+  <div class="maincont">
+    <div class="nav">
+      <div class="imagecont">
+        <img src="/Images/DSWD-Logo-Icon.png" alt="" />
+      </div>
+
+      <div class="links">
+        <ul>
+          <li class="Dashboard">
+            <a href="../dashboards/Dashboard.html">
+              <div>
+                <img src="../Admin imgs/icons8-dashboard-48.png" alt="" />
+                <label for="">Dashboard</label>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="../Activity log/ActivityLog.html">
+              <div>
+                <img src="../Admin imgs/icons8-verified-account-48.png" alt="" />
+                <label for="">Activity Log</label>
+              </div>
+            </a>
+          </li>
+          <li class="highlight">
+            <a href="../Application report/Applicationreport.html">
+              <div>
+                <img src="../Admin imgs/icons8-system-task-48.png" alt="" />
+                <label for="">Application Report</label>
+              </div>
+            </a>
+          </li>
+          <li class="userManagement">
+            <a href="../UserManagement/Usernanagement.html">
+              <div>
+                <img src="../Admin imgs/icons8-user-secured-48.png" alt="" />
+                <label for="">User Management</label>
+              </div>
+            </a>
+          </li>
+          <li class="settings-link">
+            <div class="dd">
+              <img src="../Admin imgs/icons8-settings-48.png" alt="" /><label for=""> Settings</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="logout">
+        <div>
+          <img src="../Admin imgs/icons8-logout-32.png" alt="" /><label for="">Logout</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="parent-cardcont">
+      <div class="title">
+        <div class="childtitle">
+          <p>APPLICATION REPORT</p>
+        </div>
+        <div class="button">
+          <div>
+            <p id="roleDisplay">Role</p>
+          </div>
+          <div class="buttonimg">
+            <img src="../Admin imgs/icons8-admin-26.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="searchparent-container">
+        <div class="search-container">
+          <img src="../Admin imgs/icons8-search-50.png" alt="Search Icon" class="search-icon" />
+          <input type="text" class="search-input" placeholder="Search..." />
+        </div>
+
+        <div class="Searchbar-buttons">
+          <select id="assistanceTypeDropdown">
+            <option value="" disabled selected>Select Assistance Type</option>
+            <option value="FA">Financial Assistance</option>
+            <option value="SC">Senior Citizen</option>
+            <option value="EA">Educational Assistance</option>
+            <option value="PWD">PWD</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="maincardcont">
+        <div class="card-container">
+          <div class="overflowcont" id="FA" style="display: none;">
+            <h3>Financial Assistance</h3>
+            <table class="request-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="FA-table"></tbody>
+            </table>
+          </div>
+
+          <div class="overflowcont" id="SC" style="display: none;">
+            <h3>Senior Citizen</h3>
+            <table class="request-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="SC-table"></tbody>
+            </table>
+          </div>
+
+          <div class="overflowcont" id="EA" style="display: none;">
+            <h3>Educational Assistance</h3>
+            <table class="request-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="EA-table"></tbody>
+            </table>
+          </div>
+
+          <div class="overflowcont" id="PWD" style="display: none;">
+            <h3>PWD Assistance</h3>
+            <table class="request-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="PWD-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>©2024 All Rights Reserved</p>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDiOsr6bY5BDKdiBPRzDgSpurHdkkUlc3k",
+      authDomain: "sia101-d60a1.firebaseapp.com",
+      databaseURL: "https://sia101-d60a1-default-rtdb.firebaseio.com",
+      projectId: "sia101-d60a1",
+      storageBucket: "sia101-d60a1.appspot.com",
+      messagingSenderId: "258109532727",
+      appId: "1:258109532727:web:73d735dc749d2cb4ebedb2",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    const assistanceTypes = ["FA", "SC", "EA", "PWD"];
+    const tableBodies = {
+      FA: document.getElementById("FA-table"),
+      SC: document.getElementById("SC-table"),
+      EA: document.getElementById("EA-table"),
+      PWD: document.getElementById("PWD-table"),
+    };
+
+    function loadAcceptedApplicants() {
+      const acceptedRef = database.ref("2-Accepted-Applications");
+
+      acceptedRef.once("value", (snapshot) => {
+        const data = snapshot.val();
+        console.log("Fetched Data: ", data); // Debugging: Confirm the data is fetched
+
+        if (!data) {
+          console.log("No data found for accepted applicants");
+          return;
+        }
+
+        // Clear all tables first
+        assistanceTypes.forEach((type) => {
+          tableBodies[type].innerHTML = ""; // Clear the table
+        });
+
+        // Loop through all accepted applicants
+        Object.keys(data).forEach((key) => {
+          const assistanceData = data[key];
+
+          // Loop through each applicant under this type
+          Object.keys(assistanceData).forEach((applicantKey) => {
+            const applicant = assistanceData[applicantKey];
+            const { name, contactNumber, status } = applicant;
+
+            // Populate the correct table based on the assistance type
+            if (tableBodies[key]) {
+              const row = `
+                <tr>
+                  <td>${applicantKey}</td>
+                  <td>${name || "N/A"}</td>
+                  <td>${contactNumber || "N/A"}</td>
+                  <td>${status || "Accepted"}</td>
+                </tr>`;
+              tableBodies[key].innerHTML += row;
+            }
+          });
+        });
+      });
+    }
+
+    document.getElementById("assistanceTypeDropdown").addEventListener("change", (e) => {
+      const selectedType = e.target.value;
+      console.log("Selected Assistance Type:", selectedType);
+
+      if (selectedType) {
+        assistanceTypes.forEach((type) => {
+          const tableElement = document.getElementById(type);
+          if (tableElement) {
+            tableElement.style.display = type === selectedType ? "block" : "none";
+          }
+        });
+
+        // Load the accepted applicants when a type is selected
+        loadAcceptedApplicants();
+      }
+    });
+  </script>
+</body>
+
+</html>
